@@ -1,0 +1,35 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Master.cs" Inherits="PruebaTecnica.SiteMaster" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title>Prueba Tecnica</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style>
+        .active {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <form runat="server">
+        <div class="container">
+            <header>
+                <nav>
+                    <ul>
+                        <li><a href="Default.aspx" class='<%= Request.Url.AbsolutePath.EndsWith("/Default.aspx") ? "active" : "" %>'>Inicio</a></li>
+                        <li><a href="Crear.aspx" class='<%= Request.Url.AbsolutePath.EndsWith("/Crear.aspx") ? "active" : "" %>'>Crear</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <div class="main-content">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <footer>
+            </footer>
+        </div>
+    </form>
+</body>
+</html>
